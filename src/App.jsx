@@ -1,13 +1,14 @@
-import ReactLogo from './assets/react.svg?react';
+import ReactLogo from './assets/react.svg';
+import React from 'react';
 
 export const App = () => {
 	const currentYear = new Date().getFullYear();
-	return (
-		<div>
-			<h1>Hello world!</h1>
-			<ReactLogo />
-			<p>{currentYear}</p>
-		</div>
+	return React.createElement(
+		'div',
+		null,
+		React.createElement('h1', null, 'Hello world!'),
+		React.createElement(`img`, { src: ReactLogo }, null),
+		React.createElement('p', null, currentYear),
 	);
 };
 
